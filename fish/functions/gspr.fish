@@ -11,7 +11,7 @@ function gspr
 
   set -l found (git stash list | head -1 | grep automatic | wc -l)
 
-  if math "$found==1" > /dev/null
-    git stash pop --quiet
+  if [ $found -eq 1 ]
+    git stash pop
   end
 end
